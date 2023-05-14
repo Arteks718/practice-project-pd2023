@@ -88,7 +88,7 @@ class Header extends React.Component {
           <div className={styles.loginSignnUpHeaders}>
             <div className={styles.numberContainer}>
               <img src={`${CONSTANTS.STATIC_IMAGES_PATH}phone.png`} alt="phone" />
-              <span>(877)&nbsp;355-3585</span>
+              <a href={`tel:${CONSTANTS.HEADER_PHONE}`}>{CONSTANTS.HEADER_PHONE}</a>
             </div>
             <div className={styles.userButtonsContainer}>
               {this.renderLoginButtons()}
@@ -135,7 +135,7 @@ class Header extends React.Component {
                         <a href="http://www.google.com">
                             BECOME A
                             CREATIVE
-</a>
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -167,7 +167,7 @@ class Header extends React.Component {
                         <a href="http://www.google.com">
                             SELL YOUR
                             DOMAINS
-</a>
+                        </a>
                       </li>
                     </ul>
                   </li>
