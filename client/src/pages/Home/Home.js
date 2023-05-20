@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
+import NamingContests from '../../components/NamingContests';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -48,6 +49,7 @@ const Home = (props) => {
                 <Link className={styles.button__link} to="/dashboard">DASHBOARD</Link>
               </div>
             </div>
+            <NamingContests/>
             <div className={styles.greyContainer}>
               <SlideBar
                 images={carouselConstants.mainSliderImages}
