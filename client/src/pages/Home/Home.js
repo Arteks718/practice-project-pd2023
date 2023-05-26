@@ -9,6 +9,7 @@ import styles from './Home.module.sass';
 import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 import NamingContests from '../../components/NamingContests';
+import QuestionBox from '../../components/QuestionBox';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -205,6 +206,7 @@ const Home = (props) => {
               images={carouselConstants.exampleSliderImages}
               carouselType={carouselConstants.EXAMPLE_SLIDER}
             />
+            <QuestionBox />
             <div className={styles.button}>
               <Link className={styles.button__link} to="/dashboard">DASHBOARD</Link>
             </div>
