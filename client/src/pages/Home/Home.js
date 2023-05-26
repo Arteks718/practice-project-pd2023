@@ -10,6 +10,7 @@ import carouselConstants from '../../carouselConstants';
 import Spinner from '../../components/Spinner/Spinner';
 import NamingContests from '../../components/NamingContests';
 import QuestionBox from '../../components/QuestionBox';
+import FeatureBox from '../../components/FeatureBox';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -57,6 +58,7 @@ const Home = (props) => {
                 carouselType={carouselConstants.MAIN_SLIDER}
               />
             </div>
+            <FeatureBox />
             <div className={styles.container__description}>
               <h2 className={styles.blueUnderline}>Why Squadhelp?</h2>
               <div className={styles.cardContainer}>
@@ -151,7 +153,7 @@ const Home = (props) => {
                     <span>
                         We’ll walk you through exactly what you need to share about your project
                         in order to get an awesome Name
-</span>
+                    </span>
                   </p>
                 </div>
                 <img src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/1-compressed.gif`} alt="compressed" />
