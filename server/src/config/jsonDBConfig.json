@@ -1,8 +1,0 @@
-{
-  "development": {
-    "file": "data/dev_db.json"
-  },
-  "production": {
-    "file": "data/prod_db.json"
-  }
-}

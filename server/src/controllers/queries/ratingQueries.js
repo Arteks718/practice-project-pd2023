@@ -1,31 +1,21 @@
-// const bd = require('../../models');
-const dbClient = require('../../jsonDB');
+const bd = require('../../models');
 const ServerError = require('../../errors/ServerError');
 
 module.exports.updateRating = async (data, predicate, transaction) => {
-  // const [updatedCount, [updatedRating]] = await bd.Ratings.update(data,
-  //   { where: predicate, returning: true, transaction });
-
-  const [updatedCount, [updatedRating]] = await dbClient.Ratings.update(data,
-    { where: predicate });
-
+  const [updatedCount, [updatedRating]] = await bd.Ratings.update(data,
+    { where: predicate, returning: true, transaction });
   if (updatedCount !== 1) {
     throw new ServerError('cannot update mark on this offer');
   }
-  // return updatedRating.dataValues;
-  return updatedRating;
+  return updatedRating.dataValues;
 };
 
 module.exports.createRating = async (data, transaction) => {
-  // const result = await bd.Ratings.create(data, { transaction });
-
-  const result = await dbClient.Ratings.create(data);
-
+  const result = await bd.Ratings.create(data, { transaction });
   if (!result) {
     throw new ServerError('cannot mark offer');
   } else {
-    // return result.get({ plain: true });
-    return result;
+    return result.get({ plain: true });
   }
 };
 
