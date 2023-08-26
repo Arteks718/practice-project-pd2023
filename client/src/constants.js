@@ -1,8 +1,8 @@
-const env = process.env.NODE_ENV || 'development'
-const serverIP = 'localhost'
-const serverPort = 5000
+const env = process.env.NODE_ENV || 'development';
+const serverIP = 'localhost';
+const serverPort = 3000;
 export default {
-  HEADER_PHONE: '(877)355-3585',
+  CONTACT_TEL: '(877)355-3585',
   CUSTOMER: 'customer',
   CREATOR: 'creator',
   CONTEST_STATUS_ACTIVE: 'active',
@@ -31,6 +31,10 @@ export default {
   CREATE_NEW_CATALOG_AND_ADD_CHAT: 'CREATE_NEW_CATALOG_AND_ADD_CHAT',
   USER_INFO_MODE: 'USER_INFO_MODE',
   CASHOUT_MODE: 'CASHOUT_MODE',
+  AUTH_MODE: {
+    REGISTER: 'REGISTER',
+    LOGIN: 'LOGIN',
+  },
   HEADER_ANIMATION_TEXT: [
     'a Company',
     'a Brand',
@@ -40,12 +44,12 @@ export default {
     'a Business',
     'an App',
     'a Product',
-    'a Startup'
+    'a Startup',
   ],
   FooterItems: [
     {
       title: 'SQUADHELP',
-      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work']
+      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work'],
     },
     {
       title: 'RESOURCES',
@@ -57,8 +61,8 @@ export default {
         'Blog',
         'Download eBook',
         'Pricing',
-        'Help & FAQs'
-      ]
+        'Help & FAQs',
+      ],
     },
     {
       title: 'OUR SERVICES',
@@ -70,12 +74,12 @@ export default {
         'Creative Owned Names For Sale',
         'Audience Testing',
         'Trademark Research & Filling',
-        'Managed Agency Service'
-      ]
+        'Managed Agency Service',
+      ],
     },
     {
       title: 'LEGAL',
-      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy']
-    }
-  ]
-}
+      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
+    },
+  ],
+};

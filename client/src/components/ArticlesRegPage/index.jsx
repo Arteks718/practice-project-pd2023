@@ -1,27 +1,40 @@
+// компонент с статьями для регистрационной странички
+
+//ColumnContainer, headerArticle, article  2-5
+
 import React from 'react';
 import styles from './ArticlesRegPage.module.sass';
-import articles from './article.json';
+import articles from './articles.json';
+import CONSTANSTS from '../../constants';
 
-export default function ArticlesRegPage() {
+export default function ArticlesRegPage () {
   return (
     <div className={styles.articlesMainContainer}>
-      {articles.map((column, i) => 
-      (<div key={i} className={styles.ColumnContainer}>
-        {column.map((data, j) => (
-          <div key={j}>
-            <div className={styles.headerArticle}>{data.title}</div>
-            <div className={styles.article}>{data.info}</div>
-          </div>
-        ))}
-        {
-          i == 1 ?
-        <>
-          <div className={styles.headerArticle}>I have other questions! How can I get in touch with Squadhelp?</div>
-          <div className={styles.article}>Check out our <a href='#' className={styles.orangeSpan}>FAQs</a> or send us a <a href="#" className={styles.orangeSpan}>message</a>. For assistance with launching a contest, you can also call us at (877) 355-3585 or schedule a <a href="#" className={styles.orangeSpan}>Branding Consultation</a></div>
-        </> : null
-        }
-        
-      </div>))} 
+      {articles.map((column, i) => (
+        <div key={i} className={styles.ColumnContainer}>
+          {column.map((article, j) => (
+            <div key={j}>
+              <div className={styles.headerArticles}>{article.title}</div>
+              <div className={styles.article}>{article.info}</div>
+            </div>
+          ))}
+          {i == 1 ? (
+            <>
+              <div className={styles.headerArticles}>
+                I have other questions! How can I get in touch with Squadhelp?
+              </div>
+              <div className={styles.article}>
+                Check out our <span className={styles.orangeSpan}>FAQs</span>
+                or send us a <span className={styles.orangeSpan}>message</span>
+                For assistance with launching a contest, you can also call us at{' '}
+                {CONSTANSTS.CONTACT_TEL}
+                or schedule a{' '}
+                <span className={styles.orangeSpan}>Branding Consultation</span>
+              </div>
+            </>
+          ) : null}
+        </div>
+      ))}
     </div>
   );
 }
