@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './NamingHomeBox.module.sass';
 import CONSTANTS from '../../constants';
+import {Link} from 'react-router-dom'
 
 export default function NamingHomeBox (props) {
   return (
@@ -19,9 +20,9 @@ export default function NamingHomeBox (props) {
         <p></p>
       </div>
       <div className={styles.right}>
-        <a href='/start-contest' className={styles.button_brand}>
+        <Link href='/start-contest' className={styles.button_brand}>
           <span>Get a Custom Name</span>
-        </a>
+        </Link>
       </div>
     </div>
   );
