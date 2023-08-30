@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 import styles from './NamingHomeBox.module.sass';
 import CONSTANTS from '../../constants';
-import {Link} from 'react-router-dom'
 
-export default function NamingHomeBox (props) {
+export default function NamingHomeBox() {
   return (
     <div className={styles.naming}>
       <div className={styles.left}>
         <div className={styles.icon}>
-          <img alt='' src={`${CONSTANTS.STATIC_IMAGES_PATH}h-icon1.svg`} />
+          <img alt="" src={`${CONSTANTS.STATIC_IMAGES_PATH}h-icon1.svg`} />
         </div>
+        <img src="./test.svg" alt="" srcset="" />
         <div className={styles.des}>
           <h3>Naming Contests</h3>
           <p>
@@ -17,11 +19,14 @@ export default function NamingHomeBox (props) {
             guided through our naming agency-style process
           </p>
         </div>
-        <p></p>
       </div>
+
       <div className={styles.right}>
-        <Link href='/start-contest' className={styles.button_brand}>
-          <span>Get a Custom Name</span>
+        <Link
+          to="/start-contests"
+          
+        >
+          <span className={classNames(styles.button, styles.buttonBrand)}>Get a Custom Name</span>
         </Link>
       </div>
     </div>

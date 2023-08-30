@@ -1,87 +1,84 @@
+*
+  box-sizing: border-box
 .naming
-    border: 1px solid gray
-    max-width: 800px
-    margin: 0 auto
-    background: rgba(255,255,255,.88)
-    border-radius: 24px
-    padding: 40px 32px
+  margin-bottom: 80px
+  background: #FAFAFA
+  border-radius: 24px
+  padding: 40px 32px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  text-align: left
+  @media screen and (max-width: 991px)
+    flex-wrap: wrap
+    max-width: 700px
+  @media screen and (max-width: 768px)
+    max-width: 500px
+  @media screen and (max-width: 575px)
+    max-width: 450px
+    padding: 20px 15px
+
+  .left
     display: flex
     align-items: center
-    justify-content: space-between
-    text-align: left
-    flex-wrap: wrap
+    @media screen and (max-width: 991px)
+      width: 100%
+    @media screen and (max-width: 575px)
+      flex-wrap: wrap
 
-    .left
-        width: 100%
-        display: flex
-        align-items: center
-        color: #343434
-        text-align: left
-        font-size: 14px
-        font-family: "Product Sans",sans-serif
-        font-weight: 400
-
-    .right
-        width: 50%
-        margin: 0 auto
-        padding: 20px 0 0 80px
-        text-align: left
-        flex-shrink: 0
-        position: relative
-
-        .button_brand
-            position: absolute
-            top: 0
-            right: 0
-            bottom: 0
-            left: 0
-            background: linear-gradient(45.19deg,#4433F1 0%,#628EFF 100%),linear-gradient(271.19deg,#307DF6 0%,#14BBBF 100%),#FFFFFF
-            z-index: 0
-            transition: all 0.5s ease
-            // opacity: 0
-            border-radius: 8px
-
-        button
-            line-height: 48px
-            background-color: #fff
-            font-size: 16px
-            color: #fff
-            display: inline-flex
-            align-items: center
-            font-weight: 700
-            padding: 0 20px
-            justify-content: center
-            transition: all ease 0.3s
-            border-radius: 8px
-            background: rgba(255,255,255,.16)
-            position: relative
-
-        a 
-            text-decoration: none
-            cursor: pointer
-            &>span 
-                position: relative
-                z-index: 2
-                color: #fff
-
-.icon
-    margin: 0 30px 0 0
-    & > img
-        max-width: 100%
-        vertical-align: middle
-
-.des
-    h3 
+    .icon
+      margin: 0 30px 0 0
+    @media screen and (max-width: 575px)
+      width: 100%
+      margin: 0 0 10px 0
+    
+    .des
+      h3
         font-size: 24px
         font-weight: 700
         margin: 0 0 10px 0
         font-family: "Product Sans",sans-serif
         line-height: 1.3
         color: #171717
-    p 
+        @media screen and (max-width: 575px)
+          width: 100%
+
+      p
         margin: 0
         color: #828282
         font-size: 16px
         max-width: 400px
-        font-family: "Product Sans",sans-serif
-        font-weight: 400
+        line-height: 1.5
+
+  .right
+    flex-shrink: 0
+    margin: 0 0 0 40px
+    @media screen and (max-width: 991px)
+      width: 100%
+      margin: 0
+      text-align: left
+      padding: 20px 0 0 80px
+    @media screen and (max-width: 575px)
+      padding: 20px 0 0 0
+
+.button
+  line-height: 48px
+  font-size: 16px
+  display: inline-flex
+  align-items: center
+  font-weight: 700
+  padding: 0 20px
+  justify-content: center
+  transition: all ease 0.3s
+  border-radius: 8px
+  position: relative
+  text-decoration: none
+  @media screen and (max-width: 575px)
+    width: 100%
+
+
+.buttonBrand
+  background: linear-gradient(271.19deg,#4433F1 0%,#628EFF 100%),linear-gradient(271.19deg,#307DF6 0%,#14BBBF 100%),#FFFFFF
+  outline: none
+  border: none
+  color: #fff
