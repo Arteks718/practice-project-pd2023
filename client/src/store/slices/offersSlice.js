@@ -16,7 +16,7 @@ export const getOffers = createAsyncThunk(
     try {
       const { data } = await restController.getOffers();
       return data;
-    } catch (error) {
+    } catch (err) {
       return rejectedWithValue({
         data: err?.response?.data ?? 'Gateway Timeout',
         status: err?.response?.status ?? 504
