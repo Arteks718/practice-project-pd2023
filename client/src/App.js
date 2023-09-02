@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Home from './pages/Home/Home';
+import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
+import OffersPage from './pages/OffersPage/OffersPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import Payment from './pages/Payment/Payment';
 import StartContestPage from './pages/StartContestPage/StartContestPage';
+import ContestPage from './pages/ContestPage/ContestPage';
+import UserProfile from './pages/UserProfile/UserProfile';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PrivateHoc from './components/PrivateHoc/PrivateHoc';
 import NotFound from './components/NotFound/NotFound';
-import Home from './pages/Home/Home';
+import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 import OnlyNotAuthorizedUserHoc from './components/OnlyNotAuthorizedUserHoc/OnlyNotAuthorizedUserHoc';
-import ContestPage from './pages/ContestPage/ContestPage';
-import UserProfile from './pages/UserProfile/UserProfile';
-import 'react-toastify/dist/ReactToastify.css';
-import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
 import CONSTANTS from './constants';
 import browserHistory from './browserHistory';
-import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
 
 class App extends Component {
   render () {
@@ -36,6 +37,7 @@ class App extends Component {
         />
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/offers' component={OffersPage} />
           <Route
             exact
             path='/login'
