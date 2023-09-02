@@ -23,6 +23,7 @@ const rootReducer = combineReducers({
   contestUpdationStore: contestUpdationReducer,
   chatStore: chatReducer,
   userProfile: userProfileReducer,
+  
 });
 
 export default rootReducer;
