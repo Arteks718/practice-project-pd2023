@@ -47,20 +47,20 @@ router.post(
 router.post('/getCustomersContests');
 
 // GET /contests/:id
-router.get(
-  '/getContestById',
-  checkToken.checkToken,
-  basicMiddlewares.canGetContest,
-  contestController.getContestById,
-);
+// router.get(
+//   '/getContestById',
+//   checkToken.checkToken,
+//   basicMiddlewares.canGetContest,
+//   contestController.getContestById,
+// );
 
 // GET /contests
-// router.post(
-//   '/getAllContests',
-//   checkToken.checkToken,
-//   basicMiddlewares.onlyForCreative,
-//   contestController.getContests,
-// );
+router.post(
+  '/getAllContests',
+  checkToken.checkToken,
+  basicMiddlewares.onlyForCreative,
+  contestController.getContests,
+);
 
 // PATCH /contests
 router.post(

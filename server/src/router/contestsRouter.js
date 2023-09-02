@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { queryParser} = require('express-query-parser')
 const checkToken = require('../middlewares/checkToken');
 const contestController = require('../controllers/contestController');
+const basicMiddlewares = require('../middlewares/basicMiddlewares');
 
 const contestsRouter = Router();
 
@@ -15,6 +16,13 @@ contestsRouter.get(
     parseNumber: true
   }),
   contestController.getCustomersContests,
+);
+
+contestsRouter.get(
+  '/:contestId',
+  checkToken.checkToken,
+  basicMiddlewares.canGetContest,
+  contestController.getContestById,
 );
 
 // -------------------------
@@ -36,16 +44,6 @@ contestsRouter.get(
 //   userController.payment,
 // );
 
-// // GET /users/:id/contests
-// router.post('/getCustomersContests');
-
-// // GET /contests/:id
-// router.get(
-//   '/getContestById',
-//   checkToken.checkToken,
-//   basicMiddlewares.canGetContest,
-//   contestController.getContestById,
-// );
 
 // // GET /contests
 // // router.post(
