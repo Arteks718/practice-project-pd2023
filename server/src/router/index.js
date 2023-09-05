@@ -46,9 +46,6 @@ router.post(
   userController.payment,
 );
 
-// GET /users/:id/contests
-router.post('/getCustomersContests');
-
 // GET /contests/:id
 // router.get(
 //   '/getContestById',
@@ -58,12 +55,12 @@ router.post('/getCustomersContests');
 // );
 
 // GET /contests
-router.post(
-  '/getAllContests',
-  checkToken.checkToken,
-  basicMiddlewares.onlyForCreative,
-  contestController.getContests,
-);
+// router.post(
+//   '/getAllContests',
+//   checkToken.checkToken,
+//   basicMiddlewares.onlyForCreative,
+//   contestController.getContests,
+// );
 
 // PATCH /contests
 router.post(

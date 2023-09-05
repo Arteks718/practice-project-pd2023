@@ -1,10 +1,23 @@
 const { Router } = require('express');
-const { queryParser} = require('express-query-parser')
+const { queryParser } = require('express-query-parser');
 const checkToken = require('../middlewares/checkToken');
 const contestController = require('../controllers/contestController');
 const basicMiddlewares = require('../middlewares/basicMiddlewares');
-
+а
 const contestsRouter = Router();
+
+contestsRouter.get(
+  '/',
+  checkToken.checkToken,
+  queryParser({
+    parseNull: true,
+    parseUndefined: true,
+    parseBoolean: true,
+    parseNumber: true,
+  }),
+  basicMiddlewares.onlyForCreative,
+  contestController.getContests,
+);
 
 contestsRouter.get(
   '/byCustomer',
@@ -13,7 +26,7 @@ contestsRouter.get(
     parseNull: true,
     parseUndefined: true,
     parseBoolean: true,
-    parseNumber: true
+    parseNumber: true,
   }),
   contestController.getCustomersContests,
 );
@@ -43,7 +56,6 @@ contestsRouter.get(
 //   validators.validateContestCreation,
 //   userController.payment,
 // );
-
 
 // // GET /contests
 // // router.post(

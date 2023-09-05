@@ -27,27 +27,11 @@ export const deleteCatalog = (data) => http.post('deleteCatalog', data);
 export const removeChatFromCatalog = (data) =>
   http.post('removeChatFromCatalog', data);
 export const changeCatalogName = (data) => http.post('updateNameCatalog', data);
+
 export const getCustomersContests = (data) =>
   http.get(`contests/byCustomer?${queryString.stringify(data)}`);
-
-export const getActiveContests = ({
-  offset,
-  limit,
-  typeIndex,
-  contestId,
-  industry,
-  awardSort,
-  ownEntries,
-}) =>
-  http.post('getAllContests', {
-    offset,
-    limit,
-    typeIndex,
-    contestId,
-    industry,
-    awardSort,
-    ownEntries,
-  });
+export const getActiveContests = (data) =>
+  http.get(`contests?${queryString.stringify(data)}`);
 
 export const getContestById = ({contestId}) => http.get(`contests/${contestId}`);
 
