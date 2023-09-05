@@ -9,11 +9,14 @@ const chatController = require('../controllers/chatController');
 const upload = require('../utils/fileUpload');
 const offersRouter = require('./offersRouter');
 const contestsRouter = require('./contestsRouter');
+const usersRouter = require('./usersRouter');
 
 const router = express.Router();
 
 router.use('/offers', offersRouter);
 router.use('/contests', contestsRouter);
+router.use('/users', usersRouter);
+
 router.post(
   '/registration',
   validators.validateRegistrationData,

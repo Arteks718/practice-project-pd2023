@@ -139,6 +139,7 @@ module.exports.payment = async (req, res, next) => {
         createdAt: moment().format('YYYY-MM-DD HH:mm'),
         prize,
       });
+      // TODO add transaction
     });
     await db.Contests.bulkCreate(req.body.contests, transaction);
     transaction.commit();
@@ -196,6 +197,7 @@ module.exports.cashout = async (req, res, next) => {
         ],
       },
     },
+    // TODO add Transaction
     transaction);
     transaction.commit();
     res.send({ balance: updatedUser.balance });
@@ -205,4 +207,7 @@ module.exports.cashout = async (req, res, next) => {
   }
 };
 
-
+module.exports.getTransactions = async (req, res, next) => {
+  const { tokenData: {userId} } = req;
+  console.log('userId :>>', userId)
+}
