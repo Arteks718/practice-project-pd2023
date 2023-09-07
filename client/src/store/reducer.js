@@ -11,6 +11,7 @@ import contestUpdationReducer from './slices/contestUpdationSlice';
 import chatReducer from './slices/chatSlice';
 import userProfileReducer from './slices/userProfileSlice';
 import offersReducer from './slices/offersSlice';
+import transactionReducer from './slices/transactionSlice'
 
 const rootReducer = combineReducers({
   userStore: userReducer,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   contestUpdationStore: contestUpdationReducer,
   chatStore: chatReducer,
   userProfile: userProfileReducer,
-  offersList: offersReducer
+  offersList: offersReducer,
+  transactionsList: transactionReducer
 });
 
 export default rootReducer;
