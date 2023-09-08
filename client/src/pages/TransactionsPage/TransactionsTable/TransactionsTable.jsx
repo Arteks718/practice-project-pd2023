@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { format } from "date-fns";
-import { getTransactionsThunk } from '../../../store/slices/transactionSlice';
+import { getTransactions } from '../../../store/slices/transactionSlice';
 import Spinner from '../../../components/Spinner/Spinner';
 function TransactionsTable({
   isFetching,
@@ -57,7 +57,7 @@ const mapStateToProps = ({ transactionsList }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getTransactions: () => dispatch(getTransactionsThunk()),
+  getTransactions: () => dispatch(getTransactions()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionsTable);
