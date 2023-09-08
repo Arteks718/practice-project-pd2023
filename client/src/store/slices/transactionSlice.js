@@ -1,27 +1,21 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { createExtraReducers, decorateAsyncThunk, pendingReducer, rejectedReducer } from '../../utils/store'
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import {
+  createExtraReducers,
+  decorateAsyncThunk,
+  pendingReducer,
+  rejectedReducer,
+} from '../../utils/store';
 import * as restController from '../../api/rest/restController';
 
 const TRANSACTIONS_SLICE_NAME = 'transactions';
 
 export const getTransactions = decorateAsyncThunk({
-  key: `${TRANSACTIONS_SLICE_NAME}/get`, 
+  key: `${TRANSACTIONS_SLICE_NAME}/get`,
   thunk: async () => {
     const { data } = await restController.getTransactions();
-    return data
-    }
-},)
-
-// export const getTransactionsThunk = createAsyncThunk(
-//   `${TRANSACTIONS_SLICE_NAME}/get`,
-//   async (payload, { rejectWithValue }) => {
-//     try {
-
-//     } catch (error) {
-//       return rejectWithValue({error})
-//     }
-//   },
-// );
+    return data;
+  },
+});
 
 const initialState = {
   transactions: [],
@@ -29,31 +23,30 @@ const initialState = {
   error: null,
 };
 
+const reducers = {
+  isDiscount: (state) => {
+  },
+};
+
 const extraReducers = createExtraReducers({
   thunk: getTransactions,
   pendingReducer,
-  fulfilledReducer: (state, {payload}) => {
+  fulfilledReducer: (state, { payload }) => {
     state.isFetching = false;
     state.transactions = [...payload];
-  }, 
-  rejectedReducer
-})
-
-// const extraReducers = (builder) => {
-//   builder.addCase(getTransactions.pending, pendingReducer)
-//   builder.addCase(getTransactions.fulfilled, (state, {payload}) => {
-//     state.isFetching = false;
-//     state.transactions = [...payload];
-//   })
-//   builder.addCase(getTransactions.rejected, rejectedReducer)
-// };
+  },
+  rejectedReducer,
+});
 
 const transactionsSlice = createSlice({
   name: TRANSACTIONS_SLICE_NAME,
   initialState,
-  extraReducers
-})
+  reducers,
+  extraReducers,
+});
 
-const { reducer } = transactionsSlice;
+const { reducer, actions } = transactionsSlice;
 
-export default reducer
+export const { isDiscount } = actions;
+
+export default reducer;

@@ -1,0 +1,55 @@
+.container
+  border-radius: 0 0 15px 15px
+  width: max-content
+  margin: 30px auto
+  overflow: hidden
+
+  table
+    border-collapse: collapse
+    text-align: left
+    width: 55vw
+    border-radius: 50px
+
+    caption
+      font-weight: 700
+      font-size: 24px
+      text-align: left
+
+      border-bottom: 1px solid #000000
+
+    thead
+      tr
+        th
+          font-size: 18px
+          padding: 10px 10px
+
+
+    tbody
+      tr:nth-child(odd)
+        background-color: #f0f0f0
+      tr
+        background-color: white
+        td
+          padding: 16px 10px
+          font-size: 18px
+          .expense
+            background-color: red
+            border-radius: 15px
+            padding: 4px
+
+          .income
+            background-color: green
+            border-radius: 15px
+            padding: 5px
+    tfoot
+      tr
+        background-color: #22b3b0
+        td
+          color: white
+          font-size: 24px
+          padding: 10px 10px
+        
+.discount
+  text-align: center
+  margin: 15px 0
+
