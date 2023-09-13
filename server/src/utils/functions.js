@@ -2,7 +2,11 @@ const db = require('../models');
 const CONSTANTS = require('../constants');
 
 module.exports.createWhereForAllContests = (
-  typeIndex, contestId, industry, awardSort) => {
+  typeIndex,
+  contestId,
+  industry,
+  awardSort,
+) => {
   const object = {
     where: {},
     order: [],
@@ -21,7 +25,7 @@ module.exports.createWhereForAllContests = (
   }
   Object.assign(object.where, {
     status: {
-      [ db.Sequelize.Op.or ]: [
+      [db.Sequelize.Op.or]: [
         CONSTANTS.CONTEST_STATUS_FINISHED,
         CONSTANTS.CONTEST_STATUS_ACTIVE,
       ],
@@ -31,8 +35,8 @@ module.exports.createWhereForAllContests = (
   return object;
 };
 
-function getPredicateTypes (index) {
-  return { [ db.Sequelize.Op.or ]: [types[ index ].split(',')] };
+function getPredicateTypes(index) {
+  return { [db.Sequelize.Op.or]: [types[index].split(',')] };
 }
 
 const types = [
@@ -45,3 +49,23 @@ const types = [
   'logo,tagline',
   'name,logo',
 ];
+
+module.exports.mapStringToValues = (values) => {
+  if(!Number.isNaN(Number(values))) {
+    return Number(values);
+  }
+  switch (values) {
+    case 'true':
+      return true;
+    case 'false':
+      return false;
+    case 'undefined':
+      return undefined;
+    case 'null':
+      return null;
+    case 'NaN':
+      return NaN;
+    default:
+      return values;
+  }
+};
