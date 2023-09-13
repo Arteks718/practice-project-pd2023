@@ -9,6 +9,7 @@ import PayForm from '../../components/PayForm/PayForm';
 import { cashOut, clearPaymentStore } from '../../store/slices/paymentSlice';
 import { changeProfileViewMode } from '../../store/slices/userProfileSlice';
 import Error from '../../components/Error/Error';
+import TransactionsTable from '../TransactionsPage/TransactionsTable/TransactionsTable';
 
 const UserProfile = (props) => {
   const pay = (values) => {
@@ -56,11 +57,28 @@ const UserProfile = (props) => {
                 Cashout
               </div>
             )}
+            <div
+              className={classNames(styles.optionContainer, {
+                [styles.currentOption]:
+                  profileViewMode === CONSTANTS.TRANSACTIONS_MODE,
+              })}
+              onClick={() => changeProfileViewMode(CONSTANTS.TRANSACTIONS_MODE)}
+            >
+              Transactions
+            </div>
           </div>
         </div>
-        {profileViewMode === CONSTANTS.USER_INFO_MODE ? (
-          <UserInfo />
-        ) : (
+        {/* {switch (key) {
+          case value:
+            
+            break;
+        
+          default:
+            break;
+        }} */}
+        {profileViewMode === CONSTANTS.USER_INFO_MODE && <UserInfo />}
+        
+        {profileViewMode === CONSTANTS.CASHOUT_MODE &&
           <div className={styles.container}>
             {parseInt(balance) === 0 ? (
               <span className={styles.notMoney}>
@@ -79,7 +97,8 @@ const UserProfile = (props) => {
               </div>
             )}
           </div>
-        )}
+        }
+        {profileViewMode === CONSTANTS.TRANSACTIONS_MODE && <TransactionsTable />}
       </div>
     </div>
   );

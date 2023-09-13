@@ -23,10 +23,6 @@ const initialState = {
   error: null,
 };
 
-const reducers = {
-  isDiscount: (state) => {
-  },
-};
 
 const extraReducers = createExtraReducers({
   thunk: getTransactions,
@@ -41,12 +37,9 @@ const extraReducers = createExtraReducers({
 const transactionsSlice = createSlice({
   name: TRANSACTIONS_SLICE_NAME,
   initialState,
-  reducers,
   extraReducers,
 });
 
-const { reducer, actions } = transactionsSlice;
-
-export const { isDiscount } = actions;
+const { reducer } = transactionsSlice;
 
 export default reducer;

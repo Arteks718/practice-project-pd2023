@@ -249,7 +249,8 @@ module.exports.getTransactions = async (req, res, next) => {
       where: { userId },
       attributes: {
         exclude:['updatedAt']
-      }
+      },
+      order: [['createdAt', 'ASC']]
     })
     res.status(200).send(foundTransactions);
   } catch (err) {
