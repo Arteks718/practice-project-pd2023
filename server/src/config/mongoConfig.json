@@ -6,7 +6,7 @@
   },
   "test": {
     "database": "chat-test",
-    "host": "mongo-test",
+    "host": "localhost",
     "port": 27017
   },
   "production": {

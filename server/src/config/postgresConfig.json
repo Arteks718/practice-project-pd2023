@@ -12,7 +12,8 @@
     "username": "postgres",
     "password": "password",
     "database": "squadhelp-test",
-    "host": "db-test",
+    "host": "localhost",
+    "port": "5433",
     "dialect": "postgres",
     "operatorsAliases": "Op",
     "seederStorage": "sequelize"
