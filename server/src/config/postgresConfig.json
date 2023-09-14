@@ -10,9 +10,9 @@
   },
   "test": {
     "username": "postgres",
-    "password": "admin",
-    "database": "todo-test",
-    "host": "localhost",
+    "password": "password",
+    "database": "squadhelp-test",
+    "host": "db-test",
     "dialect": "postgres",
     "operatorsAliases": "Op",
     "seederStorage": "sequelize"

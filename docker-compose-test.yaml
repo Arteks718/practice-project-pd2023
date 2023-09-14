@@ -1,50 +1,49 @@
 version: '3'
 services:
 
-  front-react:
+  front-test:
     build:
       context: ./client
 
     environment:
-      NODE_ENV: development
+      NODE_ENV: test
     depends_on:
-      - server-dev
+      - server-test
     volumes:
       - ./client:/client
       - /client/node_modules
     ports:
       - "5000:3000"
 
-  server-dev:
+  server-test:
     build:
       context: ./server
 
     environment:
-      NODE_ENV: development
+      NODE_ENV: test
     ports:
       - "3000:3000"
     depends_on:
-      - db-dev
-      - mongo-dev
+      - db-test
+      - mongo-test
     volumes:
       - ./var/www/html/images:/var/www/html/images
       - ./server:/server
       - /server/node_modules
 
-
-  mongo-dev:
+  mongo-test:
     image: mongo:4.4.6-bionic
     ports:
       - "27018:27017"
 
-  db-dev:
+  db-test:
     image: postgres:13.2-alpine
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=squadhelp-dev
+      - POSTGRES_DB=squadhelp-test
     ports:
       - "5433:5432"
 
 volumes:
-  server-dev:
+  server-test:

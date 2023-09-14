@@ -1,6 +1,6 @@
 'use strict';
 const {
-  TRANSACTION_OPERATION_TYPES: { INCOME, EXPENSE },
+  TRANSACTIONS_OPERATION_TYPES: {EXPENSE, INCOME}
 } = require('./../constants');
 
 module.exports = {
