@@ -51,21 +51,25 @@ const types = [
 ];
 
 module.exports.mapStringToValues = (values) => {
-  if(!Number.isNaN(Number(values))) {
+  if (!Number.isNaN(Number(values))) {
     return Number(values);
   }
   switch (values) {
-    case 'true':
-      return true;
-    case 'false':
-      return false;
-    case 'undefined':
-      return undefined;
-    case 'null':
-      return null;
-    case 'NaN':
-      return NaN;
-    default:
-      return values;
+  case 'true':
+    return true;
+  case 'false':
+    return false;
+  case 'undefined':
+    return undefined;
+  case 'null':
+    return null;
+  case 'NaN':
+    return NaN;
+  default:
+    return values;
   }
+};
+
+module.exports.convertPagination = ({ page = 1, results = 8 }) => {
+  return { limit: results, offset: (page - 1) * results };
 };

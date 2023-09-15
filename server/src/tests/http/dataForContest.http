@@ -1,0 +1,5 @@
+POST http://localhost:5000/dataForContest HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJjdXN0b21lck4iLCJ1c2VySWQiOjEsInJvbGUiOiJjdXN0b21lciIsImxhc3ROYW1lIjoiY3VzdG9tZXJMIiwiYXZhdGFyIjoiYW5vbi5wbmciLCJkaXNwbGF5TmFtZSI6ImN1c3RvbWVyRE4iLCJiYWxhbmNlIjoiMCIsImVtYWlsIjoiY3VzdG9tZXJAbWFpbC5jb20iLCJyYXRpbmciOjAsImlhdCI6MTY5NDc5NDA0NiwiZXhwIjoxNjk0Nzk3NjQ2fQ.JokhVcKG7Xw5DR-wE_NyPMnR2pTRn-nS4i0_1wgRvg4
+Content-Type: application/json
+
+{"characteristic1":"nameStyle","characteristic2":"typeOfName" }
